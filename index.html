@@ -5,83 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leo | Academic & Collections</title>
     <style>
-        /* 全局基础设置：标准浅色调 */
-        body {
-            background-color: #f4f4f2;
-            color: #2c3e50;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        /* 定义你的专属调色板 */
+        :root {
+            --bg-color: #1a1a1b;     /* 深炭灰背景 */
+            --gold-accent: #c5a059;  /* 哑光青铜金 */
+            --white-text: #e0e0e0;   /* 柔和骨白 */
+            --sidebar-border: #333334;
         }
 
-        /* 顶部导航栏：Title 在左，Labels 在右 */
+        body {
+            background-color: var(--bg-color);
+            color: var(--white-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* 顶部导航：Title + 5 Labels */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: #2c3e50;
+            padding: 25px 60px;
+            border-bottom: 1px solid var(--gold-accent);
+            background-color: rgba(26, 26, 27, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f4f4f2;
+        .site-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold-accent);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         nav a {
-            color: #f4f4f2;
+            color: var(--white-text);
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 30px;
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
         }
 
-        nav a:hover { color: #d4af37; }
+        nav a:hover {
+            color: var(--gold-accent);
+            text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+        }
 
-        /* 主体布局：左侧边栏 + 右侧简历 */
+        /* 主容器布局 */
         .container {
             display: flex;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 40px;
         }
 
         /* 左侧窄侧栏：社交软件 */
         .sidebar {
-            flex: 0 0 180px; /* 固定宽度 */
-            padding-right: 30px;
-            border-right: 2px solid #333;
+            flex: 0 0 160px;
+            padding-right: 40px;
+            border-right: 1px solid var(--sidebar-border);
         }
 
-        .sidebar h3 { font-size: 16px; color: #888; text-transform: uppercase; }
-        .sidebar ul { list-style: none; padding: 0; }
-        .sidebar li { margin-bottom: 15px; }
-        .sidebar a { color: #03dac6; text-decoration: none; font-size: 14px; }
-        .sidebar a:hover { border-bottom: 2px solid #03dac6; }
+        .sidebar h3 {
+            font-size: 12px;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin-bottom: 18px; }
+        
+        .sidebar a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .sidebar a:hover { color: var(--gold-accent); }
 
         /* 右侧主栏：简历内容 */
         .main-content {
             flex: 1;
-            padding-left: 50px;
+            padding-left: 60px;
         }
 
-        .main-content h2 { color: #ffffff; border-bottom: 2px solid #333; padding-bottom: 5px; }
-        .cv-section { margin-bottom: 30px; }
-        .cv-item { margin-bottom: 15px; }
-        .cv-date { color: #d4af37; font-weight: bold; margin-right: 10px; }
+        h2 {
+            color: var(--gold-accent);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
 
-        /* 响应式：手机端自动变单栏 */
-        @media (max-width: 768px) {
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--sidebar-border);
+            margin-left: 20px;
+        }
+
+        .cv-section { margin-bottom: 50px; }
+
+        .experience-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .date-tag {
+            color: var(--gold-accent);
+            font-size: 13px;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .institution {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* 响应式适配 Pixel 8 等移动设备 */
+        @media (max-width: 850px) {
             header { flex-direction: column; padding: 20px; }
-            nav { margin-top: 15px; }
-            nav a { margin: 0 10px; font-size: 12px; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 12px; }
             .container { flex-direction: column; }
-            .sidebar { border-right: none; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--sidebar-border); padding: 0 0 30px 0; margin-bottom: 40px; flex: none; }
             .main-content { padding-left: 0; }
         }
     </style>
@@ -89,11 +157,11 @@
 <body>
 
     <header>
-        <div class="title">Leo</div>
+        <div class="site-title">Leo</div>
         <nav>
             <a href="publications.html">Publication</a>
             <a href="numismatics.html">Numismatics</a>
-            <a href="cards.html">OCG/TCG Card</a>
+            <a href="cards.html">OCG/TCG card</a>
             <a href="comics.html">Comics</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -101,7 +169,7 @@
 
     <div class="container">
         <aside class="sidebar">
-            <h3>Socials</h3>
+            <h3>Connect</h3>
             <ul>
                 <li><a href="https://github.com/你的用户名" target="_blank">GitHub</a></li>
                 <li><a href="#" target="_blank">Google Scholar</a></li>
@@ -112,27 +180,31 @@
         </aside>
 
         <main class="main-content">
-            <div class="cv-section">
-                <h2>Education & Experience</h2>
-                <div class="cv-item">
-                    <span class="cv-date">2024 - Present</span>
-                    <strong>Postdoctoral Researcher</strong>, University of Chicago
+            <section class="cv-section">
+                <h2>Experience</h2>
+                
+                <div class="experience-item">
+                    <span class="date-tag">2024 — PRESENT</span>
+                    <span class="job-title">Postdoctoral Researcher</span>
+                    <span class="institution">University of Chicago, IL, USA</span>
                 </div>
-                <div class="cv-item">
-                    <span class="cv-date">2025 - Present</span>
-                    <strong>Visiting Scientist</strong>, Hamburg University of Technology (TUHH)
-                </div>
-            </div>
 
-            <div class="cv-section">
+                <div class="experience-item">
+                    <span class="date-tag">2025 — PRESENT</span>
+                    <span class="job-title">Visiting Scientist</span>
+                    <span class="institution">Hamburg University of Technology (TUHH), Germany</span>
+                </div>
+            </section>
+
+            <section class="cv-section">
                 <h2>Research Interests</h2>
-                <p>这里填入你研究的领域。既然昨天的面试已经结束，你肯定有很多新鲜的思路可以更新在这里。</p>
-            </div>
+                <p>在这里填入你最新的研究成果。既然面试已经顺利结束，你可以在这里大方展示你的核心竞争力。相比于 SWPPX 5% 的短期波动，这里的每一行字都是你稳步增值的学术资产。</p>
+            </section>
 
-            <div class="cv-section">
-                <h2>Recent Highlights</h2>
-                <p>比如：完成了一次关于 XXX 的重要 Presentation，或者是成功收割了一枚带有完美包浆的尼古拉二世 5 卢布金币。</p>
-            </div>
+            <section class="cv-section">
+                <h2>Recent Updates</h2>
+                <p>如果你在这儿放上一张 5 卢布金币在微距镜头下的细节图，配合这个背景色，那种“卡拉瓦乔阴影”的感觉绝对会拉满。</p>
+            </section>
         </main>
     </div>
 
