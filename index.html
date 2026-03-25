@@ -2,53 +2,75 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Leo | Academic & Collection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo | Academic & Collections</title>
     <style>
+        /* 全局基础设置：卡拉瓦乔深色调 */
         body {
-            background-color: #e0e0e0; /* 白底 */
-            color: #121212;           /* 黑字 */
-            font-family: 'Inter', -apple-system, sans-serif;
-            max-width: 750px;
-            margin: 60px auto;
-            padding: 20px;
-            line-height: 1.8;
+            background-color: #0d0d0d;
+            color: #d1d1d1;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
-        h1 { color: #121212; border-bottom: 2px solid #333; padding-bottom: 10px; } /* 黑色标题 */
-        h2 { color: #121212; margin-top: 40px; } /* 黑色二级标题 */
-        a { color: #03dac6; text-decoration: none; border-bottom: 1px dashed #03dac6; }
-        .collection-item { background: #1e1e1e; padding: 15px; border-radius: 8px; margin-top: 10px; }
-        .footer { margin-top: 80px; font-size: 0.8em; color: #555; text-align: center; }
-    </style>
-</head>
-<body>
-    <h1>Yuxin Liu</h1>
-    <p>Postdoctoral Researcher @ UChicago | Visiting Scientist @ TUHH</p>
-    
-    <div class="section">
-        <h2>About Me</h2>
-        <p>这里写你的研究方向。比如：我专注于XXX领域的研究，目前在芝加哥大学进行博士后工作...</p>
-    </div>
 
-    <div class="section">
-        <h2>Research & Publications</h2>
-        <p>昨天的面试演示题目也可以总结在这里：</p>
-        <ul>
-            <li><strong>Title of Your Paper</strong>, 2026. <a href="#">[Link]</a></li>
-        </ul>
-    </div>
+        /* 顶部导航栏：Title 在左，Labels 在右 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #d4af37; /* 黄金色底边 */
+        }
 
-    <div class="section">
-        <h2>Numismatic Collection</h2>
-        <div class="collection-item">
-            <strong>Willem III Gold Ducat</strong> - 具有完美的卡拉瓦乔式包浆。
-        </div>
-        <div class="collection-item">
-            <strong>Nicholas II 5 Roubles</strong> - 近期入手的俄罗斯帝国金币。
-        </div>
-    </div>
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-    <div class="footer">
-        &copy; 2026 Leo. Built with pure HTML/CSS.
-    </div>
-</body>
-</html>
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #d4af37; }
+
+        /* 主体布局：左侧边栏 + 右侧简历 */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 左侧窄侧栏：社交软件 */
+        .sidebar {
+            flex: 0 0 180px; /* 固定宽度 */
+            padding-right: 30px;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar h3 { font-size: 16px; color: #888; text-transform: uppercase; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin-bottom: 15px; }
+        .sidebar a { color: #03dac6; text-decoration: none; font-size: 14px; }
+        .sidebar a:hover { border-bottom: 1px solid #03dac6; }
+
+        /* 右侧主栏：简历内容 */
+        .main-content {
+            flex: 1;
+            padding-left: 50px;
+        }
+
+        .main-content h2 { color: #ffffff; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .cv-section { margin-bottom: 30px; }
+        .cv-item { margin
