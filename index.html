@@ -7,8 +7,8 @@
     <style>
         /* 全局基础设置：卡拉瓦乔深色调 */
         body {
-            background-color: #f4f4f2;
-            color: #2c3e50;
+            background-color: #0d0d0d;
+            color: #d1d1d1;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -21,7 +21,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: #2c3e50;
+            background-color: #1a1a1a;
             border-bottom: 2px solid #d4af37; /* 黄金色底边 */
         }
 
@@ -73,4 +73,69 @@
 
         .main-content h2 { color: #ffffff; border-bottom: 1px solid #333; padding-bottom: 5px; }
         .cv-section { margin-bottom: 30px; }
-        .cv-item { margin
+        .cv-item { margin-bottom: 15px; }
+        .cv-date { color: #d4af37; font-weight: bold; margin-right: 10px; }
+
+        /* 响应式：手机端自动变单栏 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; font-size: 12px; }
+            .container { flex-direction: column; }
+            .sidebar { border-right: none; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+            .main-content { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title">Leo</div>
+        <nav>
+            <a href="publications.html">Publication</a>
+            <a href="numismatics.html">Numismatics</a>
+            <a href="cards.html">OCG/TCG Card</a>
+            <a href="comics.html">Comics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Socials</h3>
+            <ul>
+                <li><a href="https://github.com/你的用户名" target="_blank">GitHub</a></li>
+                <li><a href="#" target="_blank">Google Scholar</a></li>
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank">Twitter / X</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="cv-section">
+                <h2>Education & Experience</h2>
+                <div class="cv-item">
+                    <span class="cv-date">2024 - Present</span>
+                    <strong>Postdoctoral Researcher</strong>, University of Chicago
+                </div>
+                <div class="cv-item">
+                    <span class="cv-date">2025 - Present</span>
+                    <strong>Visiting Scientist</strong>, Hamburg University of Technology (TUHH)
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Research Interests</h2>
+                <p>这里填入你研究的领域。既然昨天的面试已经结束，你肯定有很多新鲜的思路可以更新在这里。</p>
+            </div>
+
+            <div class="cv-section">
+                <h2>Recent Highlights</h2>
+                <p>比如：完成了一次关于 XXX 的重要 Presentation，或者是成功收割了一枚带有完美包浆的尼古拉二世 5 卢布金币。</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
