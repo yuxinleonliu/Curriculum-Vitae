@@ -36,6 +36,12 @@
             top: 0;
             z-index: 1000;
         }
+		
+		.logo-title-wrapper {
+		    display: flex;
+			align-items: center;
+			gap: 15px;
+		}
 
         .site-title {
             font-size: 26px;
@@ -43,6 +49,7 @@
             color: var(--gold-accent);
             letter-spacing: 1.5px;
             text-transform: uppercase;
+			margin: 0;
         }
 		
 		.site-logo {
@@ -199,8 +206,10 @@
 <body>
 
     <header>
-        <img src="./Asset/logo.png" alt="logo" class="site-logo">
-		<div class="site-title">Yuxin Liu, Dr. rer. nat.</div>
+	    <div class="logo-title-wrapper">
+            <img src="./Asset/logo.png" alt="logo" class="site-logo">
+		    <div class="site-title">Yuxin Liu, Dr. rer. nat.</div>
+		</div>
         <nav>
             <a href="publications.html">Publication</a>
             <a href="numismatics.html">Numismatics</a>
