@@ -109,30 +109,107 @@
         .sidebar a:hover { color: var(--gold-accent); }
 
         /* 右侧主栏：简历内容 */
-        .main-content {
-            flex: 1;
-            padding-left: 60px;
-        }
-
-        h2 {
-            color: var(--gold-accent);
-            font-size: 22px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--sidebar-border);
-            margin-left: 20px;
-        }
-
-        .cv-section { 
-		margin-top: 20px; 
-		margin-bottom: 20px; 
+        .pub-container {
+			max-width: 1000px;
+			margin: 100px auto; /* 留出 header 的高度 */
+			padding: 0 40px;
 		}
+
+		.category-header {
+			color: var(--gold-accent); /* 金色标题 */
+			border-bottom: 1px solid var(--gem-red); /* 下方红杠 */
+			padding-bottom: 10px;
+			margin-top: 50px;
+			text-transform: uppercase;
+		}
+
+		.paper-title {
+			color: var(--hre-white);
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		.authors strong {
+			color: var(--gold-accent); /* 突出你的名字 */
+			text-decoration: underline;
+		}
+
+		.pub-btn {
+			display: inline-block;
+			padding: 5px 15px;
+			border: 1px solid var(--gem-red); /* 宝石红边框 */
+			color: var(--gem-red);
+			text-decoration: none;
+			font-size: 12px;
+			margin-right: 10px;
+			transition: 0.3s;
+		}
+
+		.pub-btn:hover {
+			background-color: var(--gem-red);
+			color: white; /* 悬停变红底白字 */
+		}
+        /* 响应式适配 Pixel 8 等移动设备 */
+        @media (max-width: 850px) {
+            header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 12px; }
+            .container { flex-direction: column; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--sidebar-border); padding: 0 0 30px 0; margin-bottom: 40px; flex: none; }
+            .main-content { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+	    <div class="logo-title-wrapper">
+            <img src="./Asset/logo.png" alt="logo" class="site-logo">
+		    <div class="site-title">Yuxin Liu, Dr. rer. nat.</div>
+		</div>
+        <nav>
+            <a href="publications.html">Publication</a>
+            <a href="numismatics.html">Numismatics</a>
+            <a href="cards.html">OCG/TCG card</a>
+            <a href="comics.html">Comics</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Connect</h3>
+            <ul>
+                <li><a href="https://orcid.org/0000-0002-2080-487X" target="_blank">ORCID</a></li>
+                <li><a href="https://scholar.google.co.nz/citations?user=bzd2yo0AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                <li><a href="https://github.com/yuxinleonliu" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/yuxinleonliu/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/leon.y.liu/" target="_blank">Instagram</a></li>
+            </ul>
+        </aside>
+		
+	<main class="pub-container">
+    <h1 class="section-title">Scientific Publications</h1>
+    
+    <div class="pub-category">
+        <h2 class="category-header">Selected Publications</h2>
+        
+        <div class="pub-item">
+            <div class="pub-info">
+                <h3 class="paper-title">Advanced Gene Screening and Multi-channel Probes for...</h3>
+                <p class="authors"><strong>Y. Liu</strong>, J. Doe, Y. Krishnan*</p>
+                <p class="journal"><em>Nature Chemistry</em>, 2026, 18, 1-10.</p>
+                
+                <div class="pub-buttons">
+                    <a href="#" class="pub-btn">DOI</a>
+                    <a href="#" class="pub-btn">PDF</a>
+                    <a href="#" class="pub-btn">BibTeX</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pub-category">
+        <h2 class="category-header">2026</h2>
+        </div>
+</main>
