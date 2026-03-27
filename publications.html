@@ -110,17 +110,31 @@
 
         /* 右侧主栏：简历内容 */
         .pub-container {
-			max-width: 1000px;
-			margin: 100px auto; /* 留出 header 的高度 */
-			padding: 0 40px;
-		}
+			flex: 1;
+            padding-left: 60px;
+        }
+
+        h2 {
+            color: var(--gold-accent);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--sidebar-border);
+            margin-left: 20px;
+        }
 
 		.category-header {
-			color: var(--gold-accent); /* 金色标题 */
-			border-bottom: 1px solid var(--gem-red); /* 下方红杠 */
-			padding-bottom: 10px;
-			margin-top: 50px;
-			text-transform: uppercase;
+			margin-top: 20px; 
+			margin-bottom: 20px; 
 		}
 
 		.paper-title {
@@ -189,25 +203,24 @@
         </aside>
 		
 	<main class="pub-container">
-    <h1 class="section-title">Scientific Publications</h1>
-    
-    <div class="pub-category">
-        <h2 class="category-header">Selected Publications</h2>
-        
-        <div class="pub-item">
-            <div class="pub-info">
-                <h3 class="paper-title">Advanced Gene Screening and Multi-channel Probes for...</h3>
-                <p class="authors"><strong>Y. Liu</strong>, J. Doe, Y. Krishnan*</p>
-                <p class="journal"><em>Nature Chemistry</em>, 2026, 18, 1-10.</p>
+		
+		<section class="category-header">
+            <h2>Selected Publications</h2>
                 
-                <div class="pub-buttons">
-                    <a href="#" class="pub-btn">DOI</a>
-                    <a href="#" class="pub-btn">PDF</a>
-                    <a href="#" class="pub-btn">BibTeX</a>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="pub-item">
+				<div class="pub-info">
+					<h3 class="paper-title">Advanced Gene Screening and Multi-channel Probes for...</h3>
+					<p class="authors"><strong>Y. Liu</strong>, J. Doe, Y. Krishnan*</p>
+					<p class="journal"><em>Nature Chemistry</em>, 2026, 18, 1-10.</p>
+                
+					<div class="pub-buttons">
+						<a href="#" class="pub-btn">DOI</a>
+						<a href="#" class="pub-btn">PDF</a>
+						<a href="#" class="pub-btn">BibTeX</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
     <div class="pub-category">
         <h2 class="category-header">2026</h2>
