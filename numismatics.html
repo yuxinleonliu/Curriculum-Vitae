@@ -132,7 +132,89 @@
             margin-left: 20px;
         }
 
-        
+        .numismatic-container {
+			max-width: 1200px;
+			margin: 100px auto;
+			padding: 0 20px;
+		}
+
+		.coin-section {
+			margin-bottom: 80px;
+		}
+
+		/* 滑动容器核心 */
+		.slider-wrapper {
+			position: relative;
+			display: flex;
+			align-items: center;
+			background: rgba(30, 30, 30, 0.5);
+			padding: 20px;
+			border-radius: 10px;
+			border: 1px solid #333;
+		}
+
+		.slider-content {
+			display: flex;
+			overflow-x: hidden; /* 隐藏溢出的图片 */
+			scroll-behavior: smooth;
+			gap: 20px;
+			padding: 10px;
+		}
+
+		.coin-card {
+			flex: 0 0 calc(25% - 15px); /* 一行显示4张，扣除 gap */
+			text-align: center;
+			transition: transform 0.3s ease;
+		}
+
+		.coin-card img {
+			width: 100%;
+			border-radius: 50%; /* 钱币通常是圆的 */
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+			border: 2px solid var(--gold-accent);
+		}
+
+		.coin-card:hover {
+			transform: scale(1.05); /* 悬停时轻微放大 */
+		}
+
+		.coin-meta {
+			margin-top: 15px;
+			color: var(--white-text);
+			font-size: 14px;
+		}
+
+		.grade {
+			color: var(--chicago-red);
+			font-weight: bold;
+		}
+
+		/* 左右箭头：金币用金色，银币可以微调成银灰色 */
+		.prev-btn, .next-btn {
+			background: none;
+			border: none;
+			color: var(--gold-accent);
+			font-size: 40px;
+			cursor: pointer;
+			z-index: 10;
+			padding: 0 10px;
+			transition: color 0.3s;
+		}
+
+		.prev-btn:hover, .next-btn:hover {
+			color: var(--chicago-red);
+		}
+		
+		function moveSlider(sectionId, direction) {
+			const slider = document.getElementById(`${sectionId}-slider`);
+			const scrollAmount = slider.clientWidth / 2; // 每次点击移动半个容器的宽度
+    
+			if (direction === 1) {
+				slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+			} else {
+				slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+			}
+		}
 
         /* 响应式适配 Pixel 8 等移动设备 */
         @media (max-width: 850px) {
@@ -178,30 +260,30 @@
 
 				<section class="coin-section gold">
 					<h2 class="category-header">⚜ Gold Ducats & Aurei</h2>
-						<div class="slider-wrapper">
+					<div class="slider-wrapper">
 						<button class="prev-btn" onclick="moveSlider('gold', -1)">&#10094;</button>
 						<div class="slider-content" id="gold-slider">
 							<div class="coin-card">
 								<img src="asset/images/coins/leopoldo_gold_1.jpg" alt="Leopoldo I Gold Ducat">
 								<div class="coin-meta">Leopoldo I Ducat (1670) <br> <span class="grade">MS-70</span></div>
 							</div>
-						</div>
+							</div>
 						<button class="next-btn" onclick="moveSlider('gold', 1)">&#10095;</button>
-						</div>
+					</div>
 			</section>
 
-				<section class="coin-section silver">
-					<h2 class="category-header">⚜ Imperial Silver Thalers</h2>
-					<div class="slider-wrapper">
-						<button class="prev-btn" onclick="moveSlider('silver', -1)">&#10094;</button>
-						<div class="slider-content" id="silver-slider">
-							<div class="coin-card">
-								<img src="asset/images/coins/silver_thalers_1.jpg" alt="Silver Thaler">
-								<div class="coin-meta">Imperial Thaler (1701) <br> <span class="grade">MS-68</span></div>
-							</div>
+			<section class="coin-section silver">
+				<h2 class="category-header">⚜ Imperial Silver Thalers</h2>
+				<div class="slider-wrapper">
+					<button class="prev-btn" onclick="moveSlider('silver', -1)">&#10094;</button>
+					<div class="slider-content" id="silver-slider">
+						<div class="coin-card">
+							<img src="asset/images/coins/silver_thalers_1.jpg" alt="Silver Thaler">
+							<div class="coin-meta">Imperial Thaler (1701) <br> <span class="grade">MS-68</span></div>
 						</div>
-						<button class="next-btn" onclick="moveSlider('silver', 1)">&#10095;</button>
-					</div>
+						</div>
+					<button class="next-btn" onclick="moveSlider('silver', 1)">&#10095;</button>
+				</div>
 			</section>
         </main>
     </div>
