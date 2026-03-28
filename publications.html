@@ -135,6 +135,15 @@
 		.category-header {
 			margin-top: 10px; 
 		}
+		
+		.category-header::before {
+			content: "⚜";            /* 1. 这里填你想加的符号，比如圆点 • 或方块 ■ */
+			margin-right: 12px;      /* 2. 这就是你要的“空格”距离 */
+			color: var(--gold-accent);
+			font-size: 22px;         /* 4. 调整点的大小，让它跟文字视觉对齐 */
+			vertical-align: middle;  /* 5. 确保点在垂直方向上跟文字中心对齐 */
+			transform: translateY(2px)
+		}
 
 		.paper-title {
 			color: var(--white-text);
@@ -144,11 +153,12 @@
 		}
 		
 		.paper-title::before {
-			content: "⚜";            /* 1. 这里填你想加的符号，比如圆点 • 或方块 ■ */
+			content: "•";            /* 1. 这里填你想加的符号，比如圆点 • 或方块 ■ */
 			margin-right: 12px;      /* 2. 这就是你要的“空格”距离 */
 			color: var(--white-text);
-			font-size: 18px;         /* 4. 调整点的大小，让它跟文字视觉对齐 */
+			font-size: 12px;         /* 4. 调整点的大小，让它跟文字视觉对齐 */
 			vertical-align: middle;  /* 5. 确保点在垂直方向上跟文字中心对齐 */
+			transform: translateY(2px)
 		}
 		
 		.authors {
@@ -229,7 +239,7 @@
 			<div class="pub-item">
 				<div class="pub-info">
 					<h3 class="paper-title">Multi-channel fluorescent nanoprobe: A “REASSURED” diagnostic toolbox</h3>
-					<p class="authors">Z. Wei, F. F. Loeffler, <strong>Y. Liu*.</strong>2026, submitted. (Invited Perspective)</p>
+					<p class="authors">Z. Wei, F. F. Loeffler, <strong>Y. Liu*.</strong> 2026, submitted. (Invited Perspective)</p>
 				</div>
 				<div class="pub-info">
 					<h3 class="paper-title">Multichannel lanthanide-doped nanoprobes for serodiagnosis and therapy</h3>
