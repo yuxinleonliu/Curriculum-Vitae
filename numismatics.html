@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon | Academic & Collections</title>
+    <style>
+        /* 定义你的专属调色板 */
+        :root {
+            --bg-color: #1a1a1b;     /* 深炭灰背景 */
+            --gold-accent: #c5a059;  /* 哑光青铜金 */
+            --white-text: #e0e0e0;   /* 柔和骨白 */
+			--steel-blue: #5c6bc0;   /* 蓝紫色 */
+			--chicago-red: #800000;  /* 芝加哥红 */
+            --sidebar-border: #333334;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--white-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* 顶部导航：Title + 5 Labels */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            border-bottom: 1px solid var(--gold-accent);
+            background-color: rgba(26, 26, 27, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+		
+		.logo-title-wrapper {
+		    display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+
+        .site-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold-accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+			margin-left: 10px;
+        }
+		
+		.site-logo {
+		    height: 32px;
+			width: auto;
+			display: block;
+		}
+
+        nav a {
+            color: var(--white-text);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
+        }
+
+        nav a:hover {
+            color: var(--gold-accent);
+            text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 主容器布局 */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 40px;
+        }
+
+        /* 左侧窄侧栏：社交软件 */
+        .sidebar {
+            flex: 0 0 160px;
+            padding-right: 40px;
+            border-right: 1px solid var(--sidebar-border);
+        }
+
+        .sidebar h3 {
+            font-size: 12px;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin-bottom: 18px; }
+        
+        .sidebar a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .sidebar a:hover { color: var(--gold-accent); }
+
+        /* 右侧主栏：简历内容 */
+        .main-content {
+            flex: 1;
+            padding-left: 60px;
+        }
+
+        h2 {
+            color: var(--gold-accent);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--sidebar-border);
+            margin-left: 20px;
+        }
+
+        .cv-section { 
+		margin-top: 20px; 
+		margin-bottom: 20px; 
+		}
+		
+		.cv-logo {
+		    height: 70px;
+			width: auto;
+			display: block;
+		}
+
+        .experience-item {
+            margin-bottom: 0px;
+            position: relative;
+        }
+
+        .date-tag {
+            color: var(--chicago-red);
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;（允许后面跟内容）
+			text-align: right;
+			width: 140px;
+            margin-bottom: 4px;
+			border-right: 2px solid var(--gold-accent);
+			padding-right: 12px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            color: #aaa;
+            display: inline-block;
+			padding-left: 10px;
+        }
+		
+		.grade {
+            font-style: italic;
+			font-size: 15px;
+            color: #aaa;
+            display: inline-block;			
+        }
+
+        .institution {
+            font-style: italic;
+			display: block;
+			color: #aaa;
+            font-size: 15px;
+        }
+
+        .date-tag-award {
+            color: var(--chicago-red);
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;（允许后面跟内容）			
+            margin-bottom: 4px;			
+        }
+		
+        .award {
+            font-size: 18px;
+            color: var(--gold-accent);
+            display: inline-block;
+			margin-right: 20px;
+        }
+
+        /* 响应式适配 Pixel 8 等移动设备 */
+        @media (max-width: 850px) {
+            header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 12px; }
+            .container { flex-direction: column; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--sidebar-border); padding: 0 0 30px 0; margin-bottom: 40px; flex: none; }
+            .main-content { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+	    <div class="logo-title-wrapper">
+            <img src="./Asset/logo.png" alt="logo" class="site-logo">
+		    <div class="site-title">Yuxin Liu, Dr. rer. nat.</div>
+		</div>
+        <nav>
+            <a href="index.html">Home</a>
+			<a href="publications.html">Publication</a>
+            <a href="numismatics.html">Numismatics</a>
+            <a href="cards.html">OCG/TCG card</a>
+            <a href="comics.html">Comics</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Connect</h3>
+            <ul>
+                <li><a href="https://orcid.org/0000-0002-2080-487X" target="_blank">ORCID</a></li>
+                <li><a href="https://scholar.google.co.nz/citations?user=bzd2yo0AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                <li><a href="https://github.com/yuxinleonliu" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/yuxinleonliu/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/leon.y.liu/" target="_blank">Instagram</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+		
+		    <section class="cv-section">
+                <h2>Research Interests</h2>
+				<p> </p>
+				</section>
+			
+			<section class="cv-section">
+                <h2>Education</h2>
+                
+                <div class="experience-item">
+                    <span class="date-tag">Dec. 2020 - Mar. 2024</span>
+                    <span class="job-title">Dr. rer. nat. in biochemistry,</span>
+					<span class="grade">summa cum laude</span>
+                    <span class="institution">Max-Planck Institute of Colloids and Interfaces, Potsdam, Germany; Supervisor: Prof. Peter H. Seeberger; Prof. Felix F. Loeffler</span>
+					<span class="institution">Free University of Berlin, Berlin, Germany; Supervisor: Prof. Peter H. Seeberger; Prof. Rainer Haag</span>
+                </div>
+
+				<div class="experience-item">
+                    <span class="grade"></span>
+                </div>
+				
+                <div class="experience-item">
+                    <span class="date-tag">Sep. 2017 - Jun. 2020</span>
+                    <span class="job-title">M. Sc. in physical chemistry,</span>
+					<span class="grade">municipal excellency</span>	
+			    </div>
+                <div class="experience-item">				
+					<span class="date-tag">Sep. 2013 - Jun. 2017</span>
+                    <span class="job-title">B. Sc. in general chemistry,</span>
+					<span class="grade">municipal excellency</span>
+                    <span class="institution">Capital Normal University, Beijing, China; Supervisor: Prof. Zhanfang Ma</span>
+                </div>
+            </section>
+		
+            <section class="cv-section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <span class="date-tag">Aug. 2024 - PRESENT</span>
+                    <span class="job-title">Postdoctoral Researcher</span>
+                    <span class="institution">The University of Chicago, IL, USA; Host: Prof. Yamuna Krishnan</span>
+								
+				<div class="experience-item">
+                    <span class="date-tag"></span>
+                </div>
+				
+				<div class="experience-item">
+                    <span class="date-tag">Jan. 2026 - PRESENT</span>
+                    <span class="job-title">Chief Technology Officer (CTO) and co-founder</span>
+                    <span class="institution">ENVISENS Ltd., Amsterdam, the Netherlands</span>
+				
+				<div class="experience-item">
+                    <span class="date-tag"></span>
+                </div>
+
+                <div class="experience-item">
+                    <span class="date-tag">Jan. 2026 - PRESENT</span>
+                    <span class="job-title">Visiting Researcher</span>
+                    <span class="institution">Hamburg University of Technology (TUHH), Hamburg, Germany; Host: Prof. Felix F. Loeffler</span>
+                </div>
+				
+				<div class="experience-item">
+                    <span class="date-tag"></span>
+                </div>
+
+                <div class="experience-item">
+                    <span class="date-tag">Apr. 2024 - Dec. 2024</span>
+                    <span class="job-title">Postdoctoral Researcher</span>
+					<div class="experience-item">
+					<span class="date-tag">Jan. 2023 - Mar. 2024</span>
+                    <span class="job-title">Visiting Researcher</span>
+                    <span class="institution">University of Amsterdam, Amsterdam, the Netherlands; Host: Prof. Francesco G. Mutti and Prof. Hong Zhang</span>
+                </div>
+				
+				<div class="experience-item">
+                    <span class="date-tag"></span>
+                </div>
+
+                <div class="experience-item">
+                    <span class="date-tag">Jan. 2015 - Jun. 2020</span>
+                    <span class="job-title">Visiting Student</span>
+                    <span class="institution">Fudan University, Shanghai, China; Host: Prof. Fuyou Li</span>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2><i>Awards and Honors<i></h2>
+				
+				<div class="experience-item">
+                    
+					<span class="date-tag-award">2025</span>
+					<span class="award">Sigma Xi Member</span>					
+					<span class="date-tag-award">2023, Ministry of Education of China</span>
+					<span class="award">Government Award for Student Abroad</span>                    
+					<span class="date-tag-award">2020, Chinese Society for Biomaterials</span>
+					<span class="award">Student Award</span>
+					<span class="date-tag-award">2019, Capital Normal University</span>
+					<span class="award">Person of the Year</span>
+					<span class="date-tag-award">2019, Ministry of Education of China</span>
+					<span class="award">National Scholarship</span>
+					<span class="date-tag-award">2018, Ministry of Education of China</span>
+					<span class="award">National Scholarship</span>
+                </div> 
+            </section>
+			
+			<section class="cv-section">
+                <h2><i>Professional Services<i></h2>
+				
+				<div class="experience-item">
+                    
+					<div class="experience-item">
+                    <span class="date-tag">Jan. 2020 - PRESENT</span>
+                    <span class="job-title">Journal reviewer</span>
+                    <span class="grade">Nature Communications, Journal of the American Chemical Society, Angewandte Chemie, Advanced Materials, Trends in Analytical Chemistry, Acta Biomaterialia, Small, Journal of Colloid and Interface Science, Sensors and Actuators B: Chemical et al.</span>
+                </div> 
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
