@@ -109,33 +109,12 @@
         .sidebar a:hover { color: var(--gold-accent); }
 
         /* 右侧主栏：简历内容 */
-        .main-content {
-            flex: 1;
-            padding-left: 60px;
-        }
-
-        h2 {
-            color: var(--gold-accent);
-            font-size: 22px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--sidebar-border);
-            margin-left: 20px;
-        }
-
+        
         .numismatic-container {
-			max-width: 1200px;
-			margin: 100px auto;
-			padding: 0 20px;
+			max-width: 1600px;
+			width: 95%;
+			margin: 100px 0 100px 40px;
+			padding: 0;
 		}
 
 		.coin-section {
@@ -148,30 +127,32 @@
 			display: flex;
 			align-items: center;
 			background: rgba(30, 30, 30, 0.5);
-			padding: 20px;
-			border-radius: 10px;
-			border: 1px solid #333;
+			padding: 30px;
+			border-radius: 12px;
+			border: 1px solid var(--gold-accent); /* 用你的招牌金勾边 */
+			width: 100%;             /* 确保占满左侧扩张后的空间 */
+			box-sizing: border-box;
 		}
 
 		.slider-content {
 			display: flex;
 			overflow-x: hidden; /* 隐藏溢出的图片 */
 			scroll-behavior: smooth;
-			gap: 20px;
+			gap: 30px;
 			padding: 10px;
+			width: 100%;
 		}
 
 		.coin-card {
-			flex: 0 0 calc(25% - 15px); /* 一行显示4张，扣除 gap */
+			flex: 0 0 calc(25% - 23px); /* 一行显示4张，扣除 gap */
 			text-align: center;
 			transition: transform 0.3s ease;
 		}
 
 		.coin-card img {
-			width: 100%;
-			border-radius: 50%; /* 钱币通常是圆的 */
-			box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-			border: 2px solid var(--gold-accent);
+			width: 220px;
+			height: 220px;
+			object-fit: contain;			
 		}
 
 		.coin-card:hover {
@@ -264,8 +245,8 @@
 						<button class="prev-btn" onclick="moveSlider('gold', -1)">&#10094;</button>
 						<div class="slider-content" id="gold-slider">
 							<div class="coin-card">
-								<img src="asset/images/coins/leopoldo_gold_1.jpg" alt="Leopoldo I Gold Ducat">
-								<div class="coin-meta">Leopoldo I Ducat (1670) <br> <span class="grade">MS-70</span></div>
+								<img src="asset/images/coins/DEPRSCC001010.0MT1.png" alt="Dreikaiserjahr (1888)">
+								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1888)</div>
 							</div>
 							</div>
 						<button class="next-btn" onclick="moveSlider('gold', 1)">&#10095;</button>
