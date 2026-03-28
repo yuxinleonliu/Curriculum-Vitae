@@ -110,15 +110,35 @@
 
         /* 右侧主栏：简历内容 */
         
-        .numismatic-container {
+		.numismatic-container {
+			flex: 1;
 			max-width: 1600px;
-			width: 95%;
-			margin: 50px 0 20px 40px;
-			padding: 0;
-			color: var(--gold-accent);'
-			font-size: 22px;
-		}
+            padding-left: 60px;
+        }
 
+        h2 {
+            color: var(--gold-accent);
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--sidebar-border);
+            margin-left: 20px;
+        }
+
+		.category-header {
+			margin-top: 10px; 
+			display: inline-block;
+		}
+		
 		.coin-section {
 			margin-bottom: 80px;
 		}
@@ -242,7 +262,7 @@
 
 		<main class="numismatic-container">
 			
-				<section class="coin-section gold">
+				<section class="coin-section">
 					<h2 class="category-header">⚜ Gold Ducats & Aurei</h2>
 					<div class="grade">I am interested in the 
 					<div class="slider-wrapper">
@@ -257,7 +277,7 @@
 					</div>
 			</section>
 
-			<section class="coin-section silver">
+			<section class="coin-section">
 				<h2 class="category-header">⚜ Imperial Silver Thalers</h2>
 				<div class="slider-wrapper">
 					<button class="prev-btn" onclick="moveSlider('silver', -1)">&#10094;</button>
