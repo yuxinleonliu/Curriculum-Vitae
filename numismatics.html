@@ -111,9 +111,12 @@
         /* 右侧主栏：简历内容 */
         
 		.numismatic-container {
-			max-width: 1400px;
+			max-width: 1200px;
 			width: 90%;
-            padding-left: 60px;
+			box-sizing: border-box;
+			margin: 100px auto;
+			
+            padding-left: 0 40px;
         }
 
         h2 {
@@ -128,6 +131,7 @@
 
         h2::after {
             content: "";
+            flex: 1;
             height: 1px;
             background: var(--sidebar-border);
             margin-left: 20px;
@@ -171,8 +175,8 @@
 		}
 
 		.coin-card img {
-			width: 150px;
-			height: 150px;
+			max-width: 100%;
+			height: auto;
 			object-fit: contain;			
 		}
 
