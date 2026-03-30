@@ -216,14 +216,21 @@
 		}
 		
 		function moveSlider(sectionId, direction) {
-			const slider = document.getElementById(`${sectionId}-slider`);
-			const scrollAmount = slider.clientWidth / 2; // 每次点击移动半个容器的宽度
+			const sliderId = `${sectionId}-slider`;
+			const slider = document.getElementById(sliderId);
     
-			if (direction === 1) {
-				slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-			} else {
-				slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+			if (!slider) {
+				console.error(`找不到 ID 为 ${sliderId} 的元素！请检查 HTML。`);
+				return;
 			}
+
+			// 每次移动一个卡片的宽度（卡片宽 + gap）
+			const scrollAmount = slider.clientWidth / 2; 
+    
+			slider.scrollBy({ 
+				left: direction === 1 ? scrollAmount : -scrollAmount, 
+				behavior: 'smooth' 
+			});
 		}
 
         /* 响应式适配 Pixel 8 等移动设备 */
