@@ -215,6 +215,19 @@
 			color: var(--chicago-red);
 		}
 		
+		
+
+        /* 响应式适配 Pixel 8 等移动设备 */
+        @media (max-width: 850px) {
+            header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 12px; }
+            .container { flex-direction: column; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--sidebar-border); padding: 0 0 30px 0; margin-bottom: 40px; flex: none; }
+            .main-content { padding-left: 0; }
+        }
+    </style>
+	<script>
 		function moveSlider(sectionId, direction) {
 			const sliderId = `${sectionId}-slider`;
 			const slider = document.getElementById(sliderId);
@@ -232,17 +245,7 @@
 				behavior: 'smooth' 
 			});
 		}
-
-        /* 响应式适配 Pixel 8 等移动设备 */
-        @media (max-width: 850px) {
-            header { flex-direction: column; padding: 20px; }
-            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
-            nav a { margin: 5px 12px; }
-            .container { flex-direction: column; }
-            .sidebar { border-right: none; border-bottom: 1px solid var(--sidebar-border); padding: 0 0 30px 0; margin-bottom: 40px; flex: none; }
-            .main-content { padding-left: 0; }
-        }
-    </style>
+	</script>
 </head>
 <body>
 
