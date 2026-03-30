@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon | Academic & Collections</title>
+    <style>
+        /* 定义你的专属调色板 */
+        :root {
+            --bg-color: #1a1a1b;     /* 深炭灰背景 */
+            --gold-accent: #c5a059;  /* 哑光青铜金 */
+            --white-text: #e0e0e0;   /* 柔和骨白 */
+			--steel-blue: #5c6bc0;   /* 蓝紫色 */
+			--chicago-red: #800000;  /* 芝加哥红 */
+            --sidebar-border: #333334;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--white-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* 顶部导航：Title + 5 Labels */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            border-bottom: 1px solid var(--gold-accent);
+            background-color: rgba(26, 26, 27, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+		
+		.logo-title-wrapper {
+		    display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+
+        .site-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold-accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+			margin-left: 10px;
+        }
+		
+		.site-logo {
+		    height: 32px;
+			width: auto;
+			display: block;
+		}
+
+        nav a {
+            color: var(--white-text);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
+        }
+
+        nav a:hover {
+            color: var(--gold-accent);
+            text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 主容器布局 */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 40px;
+        }
+
+        /* 左侧窄侧栏：社交软件 */
+        .sidebar {
+            flex: 0 0 160px;
+            padding-right: 40px;
+            border-right: 1px solid var(--sidebar-border);
+        }
+
+        .sidebar h3 {
+            font-size: 12px;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin-bottom: 18px; }
+        
+        .sidebar a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .sidebar a:hover { color: var(--gold-accent); }
+
+        /* 右侧主栏：简历内容 */
+        
+		.numismatic-container {
+			max-width: 1200px;
+			width: 90%;
+			box-sizing: border-box;
+			margin-top: 0px;
+			margin-left: 80px;
+			
+            padding-left: 0 40px;
+        }
+
+        h2 {
+            color: var(--gold-accent);
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--sidebar-border);
+            margin-left: 20px;
+        }
+
+		.category-header {
+			margin-top: 10px; 
+			display: inline-block;
+		}
+		
+		.coin-section {
+			margin-bottom: 80px;
+		}
+		
+		/* 滑动容器核心 */
+		.slider-wrapper {
+			position: relative;
+			display: flex;
+			align-items: center;
+			background: rgba(30, 30, 30, 0.5);
+			padding: 30px;
+			border-radius: 12px;
+			border: 1px solid var(--gold-accent); /* 用你的招牌金勾边 */
+			width: 100%;             /* 确保占满左侧扩张后的空间 */
+			box-sizing: border-box;
+		}
+
+		.slider-content {
+			display: flex;
+			overflow-x: hidden; /* 隐藏溢出的图片 */
+			scroll-behavior: smooth;
+			gap: 30px;
+			padding: 10px;
+			flex: 1;
+			width: auto;
+		}
+
+		.coin-card {
+			flex: 0 0 calc(25% - 25px); /* 一行显示4张，扣除 gap */
+			text-align: center;
+			transition: transform 0.3s ease;
+		}
+
+		.coin-card img {
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;			
+		}
+
+		.coin-card:hover {
+			transform: scale(1.05); /* 悬停时轻微放大 */
+		}
+
+		.coin-meta {
+			margin-top: 15px;
+			color: var(--white-text);
+			font-size: 14px;
+		}
+
+		.grade {
+			color: var(--white-text);
+			font-size: 15px;
+			font-style: italic;
+			margin-bottom: 20px;
+		}
+
+		/* 左右箭头：金币用金色，银币可以微调成银灰色 */
+		.prev-btn, .next-btn {
+			background: none;
+			border: none;
+			color: var(--gold-accent);
+			font-size: 40px;
+			cursor: pointer;
+			z-index: 10;
+			padding: 0 10px;
+			transition: color 0.3s;
+		}
+
+		.prev-btn:hover, .next-btn:hover {
+			color: var(--chicago-red);
+		}
+		
+		
+
+        /* 响应式适配 Pixel 8 等移动设备 */
+        @media (max-width: 850px) {
+            header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 12px; }
+            .container { flex-direction: column; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--sidebar-border); padding: 0 0 30px 0; margin-bottom: 40px; flex: none; }
+            .main-content { padding-left: 0; }
+        }
+    </style>
+	<script>
+		function moveSlider(sectionId, direction) {
+			const sliderId = `${sectionId}-slider`;
+			const slider = document.getElementById(sliderId);
+    
+			if (!slider) {
+				console.error(`找不到 ID 为 ${sliderId} 的元素！请检查 HTML。`);
+				return;
+			}
+
+			// 每次移动一个卡片的宽度（卡片宽 + gap）
+			const scrollAmount = slider.clientWidth / 2; 
+    
+			slider.scrollBy({ 
+				left: direction === 1 ? scrollAmount : -scrollAmount, 
+				behavior: 'smooth' 
+			});
+		}
+	</script>
+</head>
+<body>
+
+    <header>
+	    <div class="logo-title-wrapper">
+            <img src="./Asset/logo.png" alt="logo" class="site-logo">
+		    <div class="site-title">Yuxin Liu, Dr. rer. nat.</div>
+		</div>
+        <nav>
+            <a href="index.html">Home</a>
+			<a href="publications.html">Publication</a>
+            <a href="numismatics.html">Numismatics</a>
+            <a href="cards.html">OCG/TCG card</a>
+            <a href="comics.html">Comics</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Connect</h3>
+            <ul>
+                <li><a href="https://orcid.org/0000-0002-2080-487X" target="_blank">ORCID</a></li>
+                <li><a href="https://scholar.google.co.nz/citations?user=bzd2yo0AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                <li><a href="https://github.com/yuxinleonliu" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/yuxinleonliu/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/leon.y.liu/" target="_blank">Instagram</a></li>
+            </ul>
+        </aside>
+
+		<main class="numismatic-container">
+			
+				<section class="category-header">
+					<h2>⚜ Gold Ducats & Aurei</h2>
+					<div class="grade">I am interested in the 
+					<div class="slider-wrapper">
+						<button class="prev-btn" onclick="moveSlider('gold', -1)">&#10094;</button>
+						<div class="slider-content" id="gold-slider">
+							<div class="coin-card">
+								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
+								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1888)</div>
+							</div>
+							
+							<div class="coin-card">
+								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
+								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1886)</div>
+							</div>
+							
+							<div class="coin-card">
+								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
+								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1885)</div>
+							</div>
+							
+							<div class="coin-card">
+								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
+								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1889)</div>
+							</div>
+							
+							<div class="coin-card">
+								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
+								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1887)</div>
+							</div>
+							</div>
+						<button class="next-btn" onclick="moveSlider('gold', 1)">&#10095;</button>
+					</div>
+			</section>
+
+			<section class="coin-section">
+				<h2 class="category-header">⚜ Imperial Silver Thalers</h2>
+				<div class="slider-wrapper">
+					<button class="prev-btn" onclick="moveSlider('silver', -1)">&#10094;</button>
+					<div class="slider-content" id="silver-slider">
+						<div class="coin-card">
+							<img src="asset/images/coins/silver_thalers_1.jpg" alt="Silver Thaler">
+							<div class="coin-meta">Imperial Thaler (1701) <br> <span class="grade">MS-68</span></div>
+						</div>
+						</div>
+					<button class="next-btn" onclick="moveSlider('silver', 1)">&#10095;</button>
+				</div>
+			</section>
+        </main>
+    </div>
+
+</body>
+</html>
