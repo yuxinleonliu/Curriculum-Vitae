@@ -163,19 +163,21 @@
 			display: flex;
 			overflow-x: hidden; /* 隐藏溢出的图片 */
 			scroll-behavior: smooth;
-			flex-wrap: nowrap;
+			gap: 30px;
+			padding: 10px;
+			flex: 1;
+			width: auto;
 		}
 
 		.coin-card {
-			flex: 0 0 calc(25% - 50px); /* 一行显示4张，扣除 gap */
-			display: flex;
-			test-align: center;
+			flex: 0 0 calc(25% - 25px); /* 一行显示4张，扣除 gap */
+			text-align: center;
 			transition: transform 0.3s ease;
 		}
 
 		.coin-card img {
-			width: auto;
 			max-width: 100%;
+			height: auto;
 			object-fit: contain;			
 		}
 
@@ -185,6 +187,11 @@
 
 		.coin-meta {
 			margin-top: 15px;
+			color: var(--white-text);
+			font-size: 14px;
+		}
+		
+		.year {
 			color: var(--white-text);
 			font-size: 14px;
 		}
@@ -235,7 +242,7 @@
 			}
 
 			// 每次移动一个卡片的宽度（卡片宽 + gap）
-			const scrollAmount = slider.clientWidth / 2; 
+			const scrollAmount = slider.clientWidth / 4; 
     
 			slider.scrollBy({ 
 				left: direction === 1 ? scrollAmount : -scrollAmount, 
@@ -281,52 +288,62 @@
 						<div class="slider-content" id="BEWD-slider">
 							<div class="coin-card">
 								<img src="Asset/images/cards/2002_KA03.jpg" alt="Structure Deck: Kaiba KA03 (2002)">
-								<div class="coin-meta">Structure Deck: Kaiba KA03 N (2002)</div>
+								<div class="coin-meta">Structure Deck: Kaiba</div>
+								<div class="year">(2002, JP, N)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2002_KA04.jpg" alt="Structure Deck: Kaiba KA04 (2002)">
-								<div class="coin-meta">Structure Deck: Kaiba KA04 N (2002)</div>
+								<div class="coin-meta">Structure Deck: Kaiba</div>
+								<div class="year">(2002, JP-CN, N)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2002_KA05.jpg" alt="Structure Deck: Kaiba KA05 (2002)">
-								<div class="coin-meta">Structure Deck: Kaiba KA05 N (2002)</div>
+								<div class="coin-meta">Structure Deck: Kaiba</div>
+								<div class="year">(2002, JP-EN, N)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2002_SDK_P001.jpg" alt="Structure Deck: Kaiba Portuguese (2002)">
-								<div class="coin-meta">Structure Deck: Kaiba Portuguese UR (2002)</div>
+								<div class="coin-meta">Structure Deck: Kaiba</div>
+								<div class="year">(2002, PT-1st, UR)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2008_YAP1_JP001.jpg" alt="Anniversary Pack (2008)">
-								<div class="coin-meta">Anniversary Pack UR (2008)</div>
+								<div class="coin-meta">Anniversary Pack</div>
+								<div class="year">(2008, JP, UR)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2013_VJMP_JP080.jpg" alt="Promo-V JUMP July (2013)">
-								<div class="coin-meta">Promo-V JUMP July UR (2013)</div>
+								<div class="coin-meta">Promo-V JUMP July</div>
+								<div class="year">(2013, JP, UR)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2014_TRC1_JP000.jpg" alt="The Rarity Collection (2014)">
-								<div class="coin-meta">The Rarity Collection HR (2014)</div>
+								<div class="coin-meta">The Rarity Collection</div>
+								<div class="year">(2014, JP, HR)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2019_LGB1_JPS02.jpg" alt="Legendary Gold Box (2019)">
-								<div class="coin-meta">Legendary Gold Box GR (2019)</div>
+								<div class="coin-meta">Legendary Gold Box</div>
+								<div class="year">(2019, JP, GUR)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2024_711D_JP001.jpg" alt="7-Eleven 2024 Collaboration (2024)">
-								<div class="coin-meta">7-Eleven 2024 Collaboration P (2024)</div>
+								<div class="coin-meta">7-Eleven 2024 Collaboration</div>
+								<div class="year">(2024, JP, NPR)</div>
 							</div>
 							
 							<div class="coin-card">
 								<img src="Asset/images/cards/2025_NYC1_JP001.jpg" alt="Ukiyo-e Limited Edition (2025)">
-								<div class="coin-meta">Ukiyo-e Limited Edition QCSR (2025)</div>
+								<div class="coin-meta">Ukiyo-e Limited Edition</div>
+								<div class="year">(2025, JP, QCSR)</div>
 							</div>
 							</div>
 						<button class="next-btn" onclick="moveSlider('BEWD', 1)">&#10095;</button>
@@ -340,12 +357,14 @@
 						<div class="slider-content" id="HR-slider">
 							<div class="coin-card">
 								<img src="Asset/images/cards/2007_PTDN_JP044.jpg" alt="Rainbow Neos (2007)">
-								<div class="coin-meta">Rainbow Neos レインボー・ネオス (2007)</div>
+								<div class="coin-meta">Rainbow Neos</div>
+								<div class="year">(2007, JP, HR)</div>
 							</div>
 						
 							<div class="coin-card">
 								<img src="Asset/images/cards/2008_LODT_JP001.jpg" alt="Honest (2008)">
-								<div class="coin-meta">Honest オネスト (2008)</div>
+								<div class="coin-meta">Honest</div>
+								<div class="year">(2008, JP, HR)</div>
 							</div>
 							</div>
 						<button class="next-btn" onclick="moveSlider('HR', 1)">&#10095;</button>
@@ -353,23 +372,38 @@
 			</section>
 			
 			<section class="category-header">
-				<h2>⚜ Ultimate Rare (A Relief Art)</h2>
+				<h2>⚜ Ultimate Rare, A Relief Art</h2>
 					<div class="slider-wrapper">
 						<button class="prev-btn" onclick="moveSlider('UTR', -1)">&#10094;</button>
 						<div class="slider-content" id="UTR-slider">
 							<div class="coin-card">
 								<img src="Asset/images/cards/2004_FET_JP005.jpg" alt="Sacred Phoenix of Nephthys (2004)">
-								<div class="coin-meta">Sacred Phoenix of Nephthys ネフティスの鳳凰神 (2004)</div>
+								<div class="coin-meta">Sacred Phoenix of Nephthys</div>
+								<div class="year">(2004, JP, UTR)</div>
 							</div>
 						
 							<div class="coin-card">
 								<img src="Asset/images/cards/2006_W6S_JP003.jpg" alt="Infernal Flame Emperor (2006)">
-								<div class="coin-meta">Infernal Flame Emperor ヘルフレイムエンペラー (2006)</div>
+								<div class="coin-meta">Infernal Flame Emperor</div>
+								<div class="year">(2006, JP, UTR)</div>
+							</div>
+							
+							<div class="coin-card">
+								<img src="Asset/images/cards/2006_POTD_JP014.jpg" alt="Destiny HERO - Dogma (2006)">
+								<div class="coin-meta">Destiny HERO - Dogma</div>
+								<div class="year">(2006, JP, UTR)</div>
 							</div>
 						
 							<div class="coin-card">
 								<img src="Asset/images/cards/2008_LODT_JP026.jpg" alt="Judgment Dragon (2008)">
-								<div class="coin-meta">Judgment Dragon 裁きの龍 (2004)</div>
+								<div class="coin-meta">Judgment Dragon</div>
+								<div class="year">(2008, JP, UTR)</div>
+							</div>
+							
+							<div class="coin-card">
+								<img src="Asset/images/cards/2008_LODT_JP042.jpg" alt="Destiny End Dragoon (2008)">
+								<div class="coin-meta">Destiny End Dragoon</div>
+								<div class="year">(2008, JP, UTR)</div>
 							</div>
 							</div>
 						<button class="next-btn" onclick="moveSlider('UTR', 1)">&#10095;</button>
