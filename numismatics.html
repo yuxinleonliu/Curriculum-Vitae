@@ -115,9 +115,8 @@
 			width: 90%;
 			box-sizing: border-box;
 			margin-top: 0px;
-			margin-left: 80px;
-			
-            padding-left: 0 40px;
+			margin-left: 40px;
+			padding-left: 0 40px;
         }
 
         h2 {
@@ -167,7 +166,7 @@
 			gap: 30px;
 			padding: 10px;
 			flex: 1;
-			width: auto;
+			width: 700px;
 		}
 
 		.coin-card {
@@ -188,12 +187,17 @@
 
 		.coin-meta {
 			margin-top: 15px;
-			color: var(--white-text);
+			color: #aaa;
+			font-size: 14px;
+		}
+		
+		.year {
+			color: #aaa;
 			font-size: 14px;
 		}
 
 		.grade {
-			color: var(--white-text);
+			color: #aaa;
 			font-size: 15px;
 			font-style: italic;
 			margin-bottom: 20px;
@@ -238,7 +242,7 @@
 			}
 
 			// 每次移动一个卡片的宽度（卡片宽 + gap）
-			const scrollAmount = slider.clientWidth / 2; 
+			const scrollAmount = slider.clientWidth / 4; 
     
 			slider.scrollBy({ 
 				left: direction === 1 ? scrollAmount : -scrollAmount, 
@@ -277,53 +281,58 @@
 
 		<main class="numismatic-container">
 			
-				<section class="category-header">
-					<h2>⚜ Gold Ducats & Aurei</h2>
-					<div class="grade">I am interested in the 
+			<section class="category-header">
+				<h2>⚜ Antique Gold Collections</h2>
 					<div class="slider-wrapper">
-						<button class="prev-btn" onclick="moveSlider('gold', -1)">&#10094;</button>
-						<div class="slider-content" id="gold-slider">
+						<button class="prev-btn" onclick="moveSlider('BEWD', -1)">&#10094;</button>
+						<div class="slider-content" id="BEWD-slider">
 							<div class="coin-card">
-								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
-								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1888)</div>
+								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Prussian Dreikaiserjahr (1888)">
+								<div class="coin-meta">Prussian <i>Dreikaiserjahr</i></div>
+								<div class="year">(1888)</div>
 							</div>
 							
 							<div class="coin-card">
-								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
-								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1886)</div>
+								<img src="Asset/images/cards/2002_A04.jpg" alt="Dutch Oranje-Nassau (1813 - 1962)">
+								<div class="coin-meta">Dutch <i>Oranje-Nassau</i></div>
+								<div class="year">(1813 - 1962)</div>
 							</div>
 							
 							<div class="coin-card">
-								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
-								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1885)</div>
+								<img src="Asset/images/cards/2002_A05.jpg" alt="Mexican Víbora y Águila (1823 - 1959)">
+								<div class="coin-meta">Mexican <i>Víbora y Águila</i></div>
+								<div class="year">(1823 - 1959)</div>
 							</div>
 							
 							<div class="coin-card">
-								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
-								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1889)</div>
+								<img src="Asset/images/cards/2002_SK_P001.jpg" alt="U.S. Native American (2002)">
+								<div class="coin-meta">U.S. <i>Native American</i></div>
+								<div class="year">(2002, PT-1st, UR)</div>
 							</div>
 							
 							<div class="coin-card">
-								<img src="Asset/images/coins/dreikaiserjahr.png" alt="Dreikaiserjahr (1888)">
-								<div class="coin-meta">“Dreikaiserjahr” Gold Collection (1887)</div>
+								<img src="Asset/images/cards/2008_YP1_JP001.jpg" alt="10th Anniversary Pack (2008)">
+								<div class="coin-meta">10th Anniversary Pack</div>
+								<div class="year">(2008, JP, UR)</div>
+							</div>							
 							</div>
-							</div>
-						<button class="next-btn" onclick="moveSlider('gold', 1)">&#10095;</button>
+						<button class="next-btn" onclick="moveSlider('BEWD', 1)">&#10095;</button>
 					</div>
 			</section>
 
-			<section class="coin-section">
-				<h2 class="category-header">⚜ Imperial Silver Thalers</h2>
-				<div class="slider-wrapper">
-					<button class="prev-btn" onclick="moveSlider('silver', -1)">&#10094;</button>
-					<div class="slider-content" id="silver-slider">
-						<div class="coin-card">
-							<img src="asset/images/coins/silver_thalers_1.jpg" alt="Silver Thaler">
-							<div class="coin-meta">Imperial Thaler (1701) <br> <span class="grade">MS-68</span></div>
-						</div>
-						</div>
-					<button class="next-btn" onclick="moveSlider('silver', 1)">&#10095;</button>
-				</div>
+			<section class="category-header">
+				<h2>⚜ Antique Silver Collections</h2>
+					<div class="slider-wrapper">
+						<button class="prev-btn" onclick="moveSlider('silver', -1)">&#10094;</button>
+						<div class="slider-content" id="silver-slider">
+							<div class="coin-card">
+								<img src="Asset/images/coins" alt="US FR (1776 to date)">
+								<div class="coin-meta">U.S., Federal Republic</div>
+								<div class="year">(1776 - PRESENT)</div>
+							</div>
+							</div>
+						<button class="next-btn" onclick="moveSlider('silver', 1)">&#10095;</button>
+					</div>
 			</section>
         </main>
     </div>
