@@ -156,6 +156,7 @@
 			border-radius: 12px;
 			border: 1px solid var(--gold-accent); /* 用你的招牌金勾边 */
 			width: 100%;             /* 确保占满左侧扩张后的空间 */
+			max-width: 1000px;
 			box-sizing: border-box;
 		}
 
@@ -163,17 +164,11 @@
 			display: flex;
 			overflow-x: hidden; /* 隐藏溢出的图片 */
 			scroll-behavior: smooth;
-			gap: 30px;
-			padding: 10px;
-			flex: 1;
-			width: auto;
+			flex-wrap: nowrap;
 		}
 
 		.coin-card {
-			flex: 0 0 280px !important; /* 一行显示4张，扣除 gap */
-			width: 280px;
-			min-width: 280px;
-			max-width: 280px;
+			flex: 0 0 25% - 50px !important; /* 一行显示4张，扣除 gap */
 			display: flex;
 			flex-direction: column;
 			align-items: center;
