@@ -167,19 +167,13 @@
 			padding-left: 10px;
         }
 		
-		.grade {
-            font-style: italic;
-			font-size: 15px;
-            color: #aaa;
-            display: inline-block;			
-        }
-
-        .history {
+		.history {
             font-style: italic;
 			display: block;
 			color: #aaa;
             font-size: 15px;
 			margin-bottom: 10px;
+			text-align: justify;
         }
 
         .date-tag-award {
@@ -202,6 +196,80 @@
 			text-decoration: none; /* 去掉土气的下划线 */
 			font-weight: 700;
 			transition: all 0.3s ease;
+		}
+		
+		.introduction a {
+			color: var(--chicago-red); /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-weight: 700;
+			transition: all 0.3s ease;
+		}
+		
+		.introduction n {
+			color: var(--gold-accent); /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-weight: 700;
+			transition: all 0.3s ease;
+		}
+		
+		.bottom-text-box {
+            width: 300px;
+			font-style: italic;
+			color: #aaa;
+            font-size: 15px;
+			margin-bottom: 10px;
+			text-align: center;
+        }
+		
+		.master-container {
+			display: block !important;
+			width: 100%;
+			overflow: hidden;
+			text-align: justify;			
+		}
+
+		.image-float-box {
+			float: left;
+			width: 300px;
+			margin-right: 30px;
+			margin-bottom: 0px;
+			text-align: center;	
+			margin-top: 30px;
+		}
+		
+		.introduction {
+			font-size: 15px;
+            color: #aaa;
+            text-align: justify;			
+        }
+		
+		/* 引文上标样式 */
+		.citation {
+			font-size: 0.75em;
+			color: #c5a059; /* 帝国金 */
+			cursor: help;
+			vertical-align: super;
+			margin-left: 2px;
+			position: relative;
+		}
+
+		/* 浮窗基础样式 */
+		.citation:hover::after {
+			content: attr(data-tooltip); /* 读取 data-tooltip 里的文字 */
+			position: absolute;
+			bottom: 120%;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #333;
+			color: #fff;
+			padding: 8px 12px;
+			border-radius: 4px;
+			border: 1px solid #c5a059;
+			width: 250px; /* 设定浮窗宽度 */
+			font-size: 13px;
+			line-height: 1.4;
+			z-index: 100;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 		}
 
         /* 响应式适配 Pixel 8 等移动设备 */
@@ -252,114 +320,33 @@
 			</section>
 			
 			<section class="cv-section">
-                <h2>Education</h2>
-                
-                <div class="experience-item">
-                    <span class="date-tag">Dec. 2020 - Mar. 2024</span>
-                    <span class="job-title">Dr. rer. nat. in biochemistry,</span>
-					<span class="grade">summa cum laude</span>
-                    <span class="institution">Max-Planck Institute of Colloids and Interfaces, Potsdam, Germany; Supervisor: Prof. Peter H. Seeberger; Prof. Felix F. Loeffler</span>
-					<span class="institution">Free University of Berlin, Berlin, Germany; Supervisor: Prof. Peter H. Seeberger; Prof. Rainer Haag</span>
-                </div>
-
-				<div class="experience-item">
-                    <span class="grade"></span>
-                </div>
-				
-                <div class="experience-item">
-                    <span class="date-tag">Sep. 2017 - Jun. 2020</span>
-                    <span class="job-title">M. Sc. in physical chemistry,</span>
-					<span class="grade">municipal excellency</span>	
-			    </div>
-                <div class="experience-item">				
-					<span class="date-tag">Sep. 2013 - Jun. 2017</span>
-                    <span class="job-title">B. Sc. in general chemistry,</span>
-					<span class="grade">municipal excellency</span>
-                    <span class="institution">Capital Normal University, Beijing, China; Supervisor: Prof. Zhanfang Ma</span>
-                </div>
+                <h2>The Imperial Prelude - Wilhelm I</h2>
             </section>
 		
             <section class="cv-section">
-                <h2>Professional Experience</h2>
+                <h2>The Hundred-Day Crown - Friedrich III</h2>
                 
-                <div class="experience-item">
-                    <span class="date-tag">Aug. 2024 - PRESENT</span>
-                    <span class="job-title">Postdoctoral Researcher</span>
-                    <span class="institution">The University of Chicago, IL, USA; Host: Prof. Yamuna Krishnan</span>
-								
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-				
-				<div class="experience-item">
-                    <span class="date-tag">Jan. 2026 - PRESENT</span>
-                    <span class="job-title">Chief Technology Officer (CTO) and co-founder</span>
-                    <span class="institution">ENVISENS Ltd., Amsterdam, the Netherlands</span>
-				
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-
-                <div class="experience-item">
-                    <span class="date-tag">Jan. 2026 - PRESENT</span>
-                    <span class="job-title">Visiting Researcher</span>
-                    <span class="institution">Hamburg University of Technology (TUHH), Hamburg, Germany; Host: Prof. Felix F. Loeffler</span>
-                </div>
-				
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-
-                <div class="experience-item">
-                    <span class="date-tag">Apr. 2024 - Dec. 2024</span>
-                    <span class="job-title">Postdoctoral Researcher</span>
-					<div class="experience-item">
-					<span class="date-tag">Jan. 2023 - Mar. 2024</span>
-                    <span class="job-title">Visiting Researcher</span>
-                    <span class="institution">University of Amsterdam, Amsterdam, the Netherlands; Host: Prof. Francesco G. Mutti and Prof. Hong Zhang</span>
-                </div>
-				
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-
-                <div class="experience-item">
-                    <span class="date-tag">Jan. 2015 - Jun. 2020</span>
-                    <span class="job-title">Visiting Student</span>
-                    <span class="institution">Fudan University, Shanghai, China; Host: Prof. Fuyou Li</span>
-                </div>
-            </section>
-
-            <section class="cv-section">
-                <h2><i>Awards and Honors<i></h2>
-				
-				<div class="experience-item">
-                    
-					<span class="date-tag-award">2025</span>
-					<span class="award">Sigma Xi Member</span>					
-					<span class="date-tag-award">2023, Ministry of Education of China</span>
-					<span class="award">Government Award for Student Abroad</span>                    
-					<span class="date-tag-award">2020, Chinese Society for Biomaterials</span>
-					<span class="award">Student Award</span>
-					<span class="date-tag-award">2019, Capital Normal University</span>
-					<span class="award">Person of the Year</span>
-					<span class="date-tag-award">2019, Ministry of Education of China</span>
-					<span class="award">National Scholarship</span>
-					<span class="date-tag-award">2018, Ministry of Education of China</span>
-					<span class="award">National Scholarship</span>
-                </div> 
+                <div class="master-container">
+					<div class="image-float-box">
+						<div class="image-wrapper">
+							<img src="../../Asset/images/coins/dreikaiserjahr_DEPRSCC_FIII_10.0M_1888.png" style="width: 300px;">
+							</div>
+						<p class="bottom-text-box" style="margin-top: 15px; margin-bottom: 50px;"> <b>Fig. 5.</b> 10 Mark, Friedrich III, 1888</p>
+					
+						<div class="image-wrapper">
+							<img src="../../Asset/images/coins/dreikaiserjahr_DEPRSCC_FIII_20.0M_1888.png" style="width: 300px;">
+							</div>
+						<p class="bottom-text-box" style="margin-top: 15px; margin-bottom: 50px;"> <b>Fig. 6.</b> 20 Mark, Friedrich III, 1888</p>
+					</div>
+					
+					<p class="introduction" style="margin-bottom: 10px;">When Wilhelm I passed away, the young Empire mourned the loss of its venerable founder. Yet, among the progressives, there was a quiet, fervent hope; Crown Prince Friedrich Wilhelm and his consort, <a href="https://en.wikipedia.org/wiki/Victoria,_Princess_Royal" target="_blank" rel="noopener noreferrer">Victoria</a>, were widely seen as the vanguard of liberal reform.<span class="citation" data-tooltip="A. Dorpalen. Emperor Frederick III and the German Liberal Movement. Am. Hist. Rev., 1948, 54(1), 1-31">[1]</span> The friction between the Crown Prince and the "Iron Chancellor" Bismarck had been a long-standing shadow over the court, spanning fundamental disagreements from the policy of "Blood and Iron" to the critical limitation of executive power in favor of parliamentary sovereignty.<span class="citation" data-tooltip="J. Alden Nichols. The Year of the Three Kaisers : Bismarck and the German Succession, 1887-88. Urbana, the United States: University of Illinois Press, 1987">[2]</span></p>
+					<p class="introduction" style="margin-bottom: 10px;">Though the Empire’s gold coinage saw no aesthetic upheaval during the brief reign (Fig. 5 & 6), the inscriptions bore an indelible political mark. By the time the 1888 gold coins were struck with the regnal name "Friedrich III," a profound debate over the Empire’s identity—whether it was to be a "German" or a "Prussian" entity—had been momentarily decided. Despite Bismarck’s heavy-handed pressure to adopt the style "Friedrich I" to signal a fresh, imperial beginning, the Emperor steadfastly insisted on the Prussian ordinal "III."<span class="citation" data-tooltip="C. M. Clark. Iron Kingdom : the Rise and Downfall of Prussia, 1600-1947. Cambridge, the United States: Harvard University Press, 2006">[3]</span> This was a rare, decisive political victory in his truncated reign: a declaration that the new Empire must remain anchored in the historic legal lineage of the House of Hohenzollern.<span class="citation" data-tooltip="F. L. Mueller. Our Fritz: Emperor Frederick III and the Political Culture of Imperial Germany. Cambridge, the United States: Harvard University Press, 2011">[4]</span></p>
+					<p class="introduction" style="margin-bottom: 10px;">However, on June 15, 1888, at the <a href="https://en.wikipedia.org/wiki/New_Palace,_Potsdam" target="_blank" rel="noopener noreferrer"><i>Neues Palais</i></a> in Potsdam—the very cradle of Prussian zenith—throat cancer claimed the life of Friedrich III.<span class="citation" data-tooltip="M. Mackenzie. The Fatal Illness of Frederick the Noble. London, UK; Sampson Low, Marston, Searle & Rivington, 1888">[5]</span> With his final breath, Germany’s most promising opportunity for a peaceful transition toward a constitutional monarchy vanished into the twilight.</p>
+				</div>
             </section>
 			
 			<section class="cv-section">
-                <h2><i>Professional Services<i></h2>
-				
-				<div class="experience-item">
-                    
-					<div class="experience-item">
-                    <span class="date-tag">Jan. 2020 - PRESENT</span>
-                    <span class="job-title">Journal reviewer</span>
-                    <span class="grade">Nature Communications, Journal of the American Chemical Society, Angewandte Chemie, Advanced Materials, Trends in Analytical Chemistry, Acta Biomaterialia, Small, Journal of Colloid and Interface Science, Sensors and Actuators B: Chemical et al.</span>
-                </div> 
+                <h2>The Sunset of Iron & Blood - Wilhelm II</h2>                
             </section>
         </main>
     </div>
