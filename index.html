@@ -195,6 +195,28 @@
             display: inline-block;
 			margin-right: 20px;
         }
+		
+		.footer-separator {
+			height: 1px; /* 线条粗细，1px 最为优雅 */
+			width: 100%;
+			margin: 40px 0 20px 0; /* 上方留出 40px 空间，下方留出 20px */
+			background: linear-gradient(
+				to right, 
+				transparent, 
+				#c5a059 20%, 
+				#c5a059 50%, 
+				#c5a059 80%, 
+				transparent
+			); /* 这是一个从透明到金黄再到透明的线性渐变，更有呼吸感 */
+		}
+
+		/* 底部文字样式 */
+		.footer-note {
+			text-align: center;
+			color: #aaa; /* 使用暗灰色，不抢金币和正文的风头 */
+			font-size: 0.85rem;
+			margin-bottom: 30px;
+		}
 
         /* 响应式适配 Pixel 8 等移动设备 */
         @media (max-width: 850px) {
@@ -354,6 +376,9 @@
             </section>
         </main>
     </div>
-
+	
+	<div class="footer-separator"></div>
+	<p class="footer-note">© 2026 Designed by Liu and Gemini. All Rights Reserved.</p>
+	
 </body>
 </html>
