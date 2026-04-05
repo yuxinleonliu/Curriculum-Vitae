@@ -167,18 +167,13 @@
 			padding-left: 10px;
         }
 		
-		.grade {
-            font-style: italic;
-			font-size: 15px;
-            color: #aaa;
-            display: inline-block;			
-        }
-
-        .institution {
+		.history {
             font-style: italic;
 			display: block;
 			color: #aaa;
             font-size: 15px;
+			margin-bottom: 10px;
+			text-align: justify;
         }
 
         .date-tag-award {
@@ -191,10 +186,117 @@
 		
         .award {
             font-size: 18px;
-            color: #aaa;
+            color: var(--white-text);
             display: inline-block;
 			margin-right: 20px;
         }
+		
+		.history a {
+			color: var(--chicago-red); /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-weight: 700;
+			transition: all 0.3s ease;
+		}
+		
+		.history t {
+			color: #aaa; /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-size: 20px;
+			font-style: italic;
+			transition: all 0.3s ease;
+		}
+		
+		.introduction a {
+			color: var(--chicago-red); /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-weight: 700;
+			transition: all 0.3s ease;
+		}
+		
+		.introduction n {
+			color: var(--gold-accent); /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-weight: 700;
+			transition: all 0.3s ease;
+		}
+		
+		.introduction t {
+			color: #aaa; /* 使用你的帝国金 */
+			text-decoration: none; /* 去掉土气的下划线 */
+			font-size: 20px;
+			font-style: italic;
+			transition: all 0.3s ease;
+		}
+		
+		.bottom-text-box {
+            width: 300px;
+			font-style: italic;
+			color: #aaa;
+            font-size: 15px;
+			margin-bottom: 10px;
+			text-align: center;
+        }
+		
+		.master-container {
+			display: block !important;
+			width: 100%;
+			text-align: justify;			
+		}
+
+		.image-float-box-left {
+			float: left;
+			width: 300px;
+			margin-right: 30px;
+			margin-bottom: 0px;
+			text-align: center;	
+			margin-top: 30px;
+		}
+		
+		.image-float-box-right {
+			float: right;
+			width: 300px;
+			margin-right: 30px;
+			margin-bottom: 0px;
+			text-align: center;	
+			padding-top: 300px;
+		}
+		
+		.introduction {
+			font-size: 15px;
+            color: #aaa;
+            text-align: justify;			
+        }
+		
+		/* 引文上标样式 */
+		.citation {
+			font-size: 0.75em;
+			color: #c5a059; /* 帝国金 */
+			cursor: help;
+			vertical-align: super;
+			margin-left: 2px;
+			position: relative;
+		}
+
+		/* 浮窗基础样式 */
+		.citation:hover::after {
+			content: attr(data-tooltip); /* 读取 data-tooltip 里的文字 */
+			position: absolute;
+			bottom: 120%;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #333;
+			color: #fff;
+			padding: 8px 12px;
+			border-radius: 4px;
+			border: 1px solid #c5a059;
+			width: 300px; /* 设定浮窗宽度 */
+			white-space: normal;
+			word-wrap: break-word;
+			font-size: 13px;
+			line-height: 1.4;
+			z-index: 100;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+		}
 		
 		.footer-separator {
 			height: 1px; /* 线条粗细，1px 最为优雅 */
@@ -217,6 +319,8 @@
 			font-size: 0.85rem;
 			margin-bottom: 30px;
 		}
+		
+		
 
         /* 响应式适配 Pixel 8 等移动设备 */
         @media (max-width: 850px) {
@@ -233,15 +337,15 @@
 
     <header>
 	    <div class="logo-title-wrapper">
-            <img src="./Asset/logo.png" alt="logo" class="site-logo">
+            <img src="../../Asset/logo.png" alt="logo" class="site-logo">
 		    <div class="site-title">Yuxin Liu, Dr. rer. nat.</div>
 		</div>
         <nav>
-            <a href="index.html">Home</a>
-			<a href="publications.html">Publication</a>
-            <a href="numismatics.html">Numismatics</a>
-            <a href="cards.html">OCG/TCG card</a>
-            <a href="comics.html">Comics</a>
+            <a href="../../index.html">Home</a>
+			<a href="../../publications.html">Publication</a>
+            <a href="../../numismatics.html">Numismatics</a>
+            <a href="../../cards.html">OCG/TCG card</a>
+            <a href="../../comics.html">Comics</a>
         </nav>
     </header>
 
@@ -260,125 +364,49 @@
         <main class="main-content">
 		
 		    <section class="cv-section">
-                <h2>Research Interests</h2>
-				<p> </p>
-				</section>
-			
+                <h2>Oranje-Nassau in Kingdom of the Netherlands, 1851 to PRESENT</h2>
+				<span class="history"></span>
+				</section>			
+
 			<section class="cv-section">
-                <h2>Education</h2>
+                <h2>Nassau's Lion and the Seven Arrows</h2>
                 
-                <div class="experience-item">
-                    <span class="date-tag">Dec. 2020 - Mar. 2024</span>
-                    <span class="job-title">Dr. rer. nat. in biochemistry,</span>
-					<span class="grade">summa cum laude</span>
-                    <span class="institution">Max-Planck Institute of Colloids and Interfaces, Potsdam, Germany; Supervisor: Prof. Peter H. Seeberger; Prof. Felix F. Loeffler</span>
-					<span class="institution">Free University of Berlin, Berlin, Germany; Supervisor: Prof. Peter H. Seeberger; Prof. Rainer Haag</span>
-                </div>
-
-				<div class="experience-item">
-                    <span class="grade"></span>
-                </div>
-				
-                <div class="experience-item">
-                    <span class="date-tag">Sep. 2017 - Jun. 2020</span>
-                    <span class="job-title">M. Sc. in physical chemistry,</span>
-					<span class="grade">municipal excellency</span>	
-			    </div>
-                <div class="experience-item">				
-					<span class="date-tag">Sep. 2013 - Jun. 2017</span>
-                    <span class="job-title">B. Sc. in general chemistry,</span>
-					<span class="grade">municipal excellency</span>
-                    <span class="institution">Capital Normal University, Beijing, China; Supervisor: Prof. Zhanfang Ma</span>
-                </div>
-            </section>
-		
-            <section class="cv-section">
-                <h2>Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <span class="date-tag">Aug. 2024 - PRESENT</span>
-                    <span class="job-title">Postdoctoral Researcher</span>
-                    <span class="institution">The University of Chicago, IL, USA; Host: Prof. Yamuna Krishnan</span>
-								
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-				
-				<div class="experience-item">
-                    <span class="date-tag">Jan. 2026 - PRESENT</span>
-                    <span class="job-title">Chief Technology Officer (CTO) and co-founder</span>
-                    <span class="institution">ENVISENS Ltd., Amsterdam, the Netherlands</span>
-				
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-
-                <div class="experience-item">
-                    <span class="date-tag">Jan. 2026 - PRESENT</span>
-                    <span class="job-title">Visiting Researcher</span>
-                    <span class="institution">Hamburg University of Technology (TUHH), Hamburg, Germany; Host: Prof. Felix F. Loeffler</span>
-                </div>
-				
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-
-                <div class="experience-item">
-                    <span class="date-tag">Apr. 2024 - Dec. 2024</span>
-                    <span class="job-title">Postdoctoral Researcher</span>
-					<div class="experience-item">
-					<span class="date-tag">Jan. 2023 - Mar. 2024</span>
-                    <span class="job-title">Visiting Researcher</span>
-                    <span class="institution">University of Amsterdam, Amsterdam, the Netherlands; Host: Prof. Francesco G. Mutti and Prof. Hong Zhang</span>
-                </div>
-				
-				<div class="experience-item">
-                    <span class="date-tag"></span>
-                </div>
-
-                <div class="experience-item">
-                    <span class="date-tag">Jan. 2015 - Jun. 2020</span>
-                    <span class="job-title">Visiting Student</span>
-                    <span class="institution">Fudan University, Shanghai, China; Host: Prof. Fuyou Li</span>
-                </div>
-            </section>
-
-            <section class="cv-section">
-                <h2><i>Awards and Honors<i></h2>
-				
-				<div class="experience-item">
-                    
-					<span class="date-tag-award">2025</span>
-					<span class="award">Sigma Xi Member</span>					
-					<span class="date-tag-award">2023, Ministry of Education of China</span>
-					<span class="award">Government Award for Student Abroad</span>                    
-					<span class="date-tag-award">2020, Chinese Society for Biomaterials</span>
-					<span class="award">Student Award</span>
-					<span class="date-tag-award">2019, Capital Normal University</span>
-					<span class="award">Person of the Year</span>
-					<span class="date-tag-award">2019, Ministry of Education of China</span>
-					<span class="award">National Scholarship</span>
-					<span class="date-tag-award">2018, Ministry of Education of China</span>
-					<span class="award">National Scholarship</span>
-                </div> 
+                <div class="master-container">
+					<div class="image-float-box-left">
+						<div class="image-wrapper">
+							<img src="../../Asset/images/coins/oranje/coa.jpg" style="width: 300px;">
+							</div>
+						<p class="bottom-text-box" style="margin-top: 15px; margin-bottom: 30px;"> <b>Fig. 1.</b> Coat of arms of the Netherlands, 1815 to PRESENT</p>					
+					</div>
+					
+					<p class="introduction" style="margin-bottom: 10px;"></p>
+				</div>
             </section>
 			
 			<section class="cv-section">
-                <h2><i>Professional Services<i></h2>
-				
-				<div class="experience-item">
-                    
-					<div class="experience-item">
-                    <span class="date-tag">Jan. 2020 - PRESENT</span>
-                    <span class="job-title">Journal reviewer</span>
-                    <span class="grade">Nature Communications, Journal of the American Chemical Society, Angewandte Chemie, Advanced Materials, Trends in Analytical Chemistry, Acta Biomaterialia, Small, Journal of Colloid and Interface Science, Sensors and Actuators B: Chemical et al.</span>
-                </div> 
-            </section>
-        </main>
-    </div>
+                <h2>Foundamental Oak of the Soverign Architecture - Willem I</h2>
+			</section>
+			
+			<section class="cv-section">
+                <h2>Swaying Willow Navigating the Reform Wind - Willem II</h2>
+			</section>
+			
+			<section class="cv-section">
+                <h2>Persistent Thorn Scratching the Receding Past - Willem III</h2>
+			</section>
+			
+			<section class="cv-section">
+                <h2>Protective Linden against the Global Gale - Wilhelmina</h2>
+			</section>
+			
+			<section class="cv-section">
+                <h2>Flourishing Tulips of Shared Prosperity - Juliana & Beatrix</h2>
+			</section>
+	</div>		
+
 	
 	<div class="footer-separator"></div>
 	<p class="footer-note">© 2026 Designed by Liu and Gemini. All Rights Reserved.</p>
-	
+
 </body>
 </html>
